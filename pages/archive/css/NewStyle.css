@@ -1,0 +1,777 @@
+/* --------------------------------------------------------------------------------------------------------------- */
+/* Including additional Fonts*/
+/* --------------------------------------------------------------------------------------------------------------- */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+body {
+	line-height: 1; }
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-weight: normal; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+del {
+  text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a img {
+  border: none; }
+
+/* =Scss Variables
+-------------------------------------------------------------- */
+/* =Global
+-------------------------------------------------------------- */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  /* background-color: #3cb5f9;*/
+  	background: linear-gradient(45deg, #616161, #1c1c1c);
+	background-color:#FFFFFF;
+  color: #505050;
+  /* font-family: "Ubuntu", sans-serif; */
+  font-family: calibri;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.8; }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  font-weight: 300; }
+
+a {
+  text-decoration: none;
+  color: #3cb5f9; }
+
+a:hover {
+  color: #0793e2; }
+
+.center {
+	text-align: center;
+}
+
+/* anchor - button style */
+.btn {
+	display:inline-block;
+	padding:5px 15px 7px;
+	text-transform:uppercase;
+	border:2px solid #000000;
+	color:#000000;
+	font-weight: 700;
+    font-size: 18px;
+	border-radius:5px;
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.btn:hover {
+	border:2px solid white;
+	border-radius:5px;
+	color:white;
+	background:#ff3333;
+}
+/* --------------------- */
+
+/* =Template
+-------------------------------------------------------------- */
+#wrapper {
+  width: 100%;
+  margin: 0 auto; }
+
+#main {
+  background-color: #fff;
+  padding-top: 150px; }
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 30px; }
+
+section {
+	min-height: 100vh;
+	min-height: 100%;
+	padding: 60px 0; }
+section h1 {
+    font-weight: 700;
+    margin-bottom: 10px; }
+section p {
+    margin-bottom: 30px; }
+section p:last-child {
+      margin-bottom: 0; }
+section.color {
+    background-color: #3cb5f9;
+    color: white; }
+section.color a{
+    color: white; }
+
+/* =Header
+-------------------------------------------------------------- */
+header {
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background-color: #0683c9;
+	/* background-color: rgba(0,0,0,.5); */
+	-webkit-transition: height 0.3s;
+	-moz-transition: height 0.3s;
+	-ms-transition: height 0.3s;
+	-o-transition: height 0.3s;
+	transition: height 0.3s;
+}
+
+header h1#logo {
+    display: inline-block;
+    height: 150px;
+    line-height: 150px;
+    float: left;
+    font-family: "Oswald", sans-serif;
+    font-size: 60px;
+    color: white;
+    font-weight: 400;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+header nav {
+    display: inline-block;
+    float: right;
+}
+
+header nav a {
+    line-height: 150px;
+    margin-left: 20px;
+    color: #9fdbfc;
+    font-weight: 700;
+    font-size: 18px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+header nav a:hover {
+	color: white;
+}
+
+header.smaller {
+    height: 75px;
+}
+
+header.smaller h1#logo {
+	width: 250px; /* from 150 */
+	height: 75px;
+    line-height: 75px;
+	font-size: 30px;
+}
+
+header.smaller nav a {
+    line-height: 75px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/* quiz-section
+/* --------------------------------------------------------------------------------------------------------------- */  
+#quiz_section {padding:5px 0 5px; text-align:center;}
+#quiz_section *{/*margin:0 auto 5px;*/ padding:0;} 
+#quiz_section .heading{font-size:46px; font-style:italic;}
+/* #quiz_section p{max-width:50%; line-height:1.8;} */
+#quiz_section .btn{margin:0; padding:15px 25px 17px;} 
+
+/* .quiz-banner - entire stretch inside the quiz area */
+/* ------------------------------------------------------------ */
+.quiz-banner h1 {
+	color: #ffffff;
+	font-family: 'Lato', sans-serif; font-size: 54px;
+	font-weight: 300;
+	line-height: 58px;
+	margin: 10px 0 10px; }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ------------------------------------------------------------ */
+/* .quiz-area - General Elements */
+/* ------------------------------------------------------------ */
+.quiz_area {
+	padding: 0px;
+	margin: 0px auto;
+	overflow: auto;
+}
+
+.quiz_area .btn {
+	width: 20%;
+}
+
+.question_text {
+	/* color: #424242; */
+	font-family: 'Raleway', sans-serif;
+	letter-spacing:0.1em;
+	text-align:center;
+	/*text-transform: lowercase; */
+	margin: 20px; 
+	line-height: 145%;
+	font-size: 14pt;
+	display:inline-block;
+	/* font-variant: small-caps; */
+}
+
+.question_text p {
+	/* color: #424242; */
+	margin: 10px auto; /* default margins */
+	width: 70%;
+}
+
+.question_text p:first-letter{
+	text-transform: uppercase;
+	color: grey; }
+	
+.question_text p:first-of-type { /* first paragraph in question-text */
+	margin: 25px auto auto auto;
+}
+
+.question_text p:last-of-type{ /* last paragraph in question-text */
+	margin: auto auto 15px auto;
+}
+
+.question_text p:only-of-type { /* if only one paragraph is present in Question Text */
+	margin: 25px auto 15px auto;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ------------------------------------------------------------ */
+/* .quiz-area - Threshold page elements */
+/* ------------------------------------------------------------ */
+.quiz_area .value {
+  border-bottom: 4px dashed #bdc3c7;
+  text-align: center;
+  font-weight: bold;
+  font-size: 5em;
+  width: 30%; 
+  height: 10%;
+  line-height: 30%;
+  margin: 20px auto;
+  letter-spacing: -.07em;
+  text-shadow: white 2px 2px 2px;
+}
+
+.quiz_area input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  width: 60%;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: 0;
+}
+
+.quiz_area input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #e74c3c;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #3cb5f9;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}​
+
+ .quiz_area input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: white;
+    border: 2px solid #e74c3c;
+}
+
+.quiz_area input[type="range"]::-webkit-slider-thumb:active {
+	transform: scale(1.6);
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ------------------------------------------------------------ */
+/* Radio button Styles */
+/* ------------------------------------------------------------ */
+.quiz_area input[type=radio], input[type=checkbox] {
+		display:none;
+}
+
+.quiz_area input[type=radio] + label, input[type=checkbox] + label {
+	display:inline-block;
+	margin:10px;
+	padding: 10px 12px;
+	margin-bottom: 10;
+	font-size: 18px;
+	line-height: 2.5;
+	width: 30%;
+	/* color: #333; */
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-color: transparent;
+	background-repeat: repeat-x;
+	border: 1px solid #000000;
+	border-color: #000000;
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.quiz_area input[type=radio]:checked + label, input[type=checkbox]:checked + label, input[type=checkbox]:hover + label, input[type=checkbox]:hover + label{
+	background-image: none;
+	border: 1px solid #7D32DF;
+	outline: 0;
+	background-color:#7D32DF;
+}
+	
+.quiz_area input[type=radio]:hover + label:hover {
+	border: 1px solid #8F39FF;
+	background-image: none;
+	outline: 0;
+	background-color:#8F39FF;
+}
+
+.quiz_area .error input[type=radio] + label {
+	border: 1px solid #F00;
+	border-color: #FF0000;
+	color: red;
+}
+
+.quiz_area input[type=radio]:checked + label, input[type=checkbox]:checked + label, input[type=checkbox]:hover + label, input[type=checkbox]:hover + label{
+	background-image: none;
+	border: 1px solid #7D32DF;
+	outline: 0;
+	background-color:#7D32DF;
+	color: white;
+}
+	
+.quiz_area input[type=radio]:hover + label:hover {
+	border: 1px solid #8F39FF;
+	background-image: none;
+	outline: 0;
+	background-color:#8F39FF;
+	color: white;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ------------------------------------------------------------ */
+/* user_notification Area */
+/* ------------------------------------------------------------ */
+.user_notification {
+	font-family: 'Raleway', sans-serif;
+	padding: 15px 15px;
+	margin: 20px auto;
+	width: 40%;
+}
+.user_notification p {
+	
+	letter-spacing:0.1em;
+	text-align:center;
+	/*
+	margin: 20px auto;*/
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ------------------------------------------------------------ */
+/* Dot Style Progress indicator */
+/* ------------------------------------------------------------ */
+/* clearfix */
+/* ------------------------------------------------------------ */
+.clearfix:before,
+.clearfix:after {
+	content: '';
+	display: table;
+}
+ 
+.clearfix:after {
+	clear: both;
+}
+/* progress bar wrap */
+/* -------------------------------- */
+.progress-wrap {
+	background-color: transparant; 
+	padding: 30px;
+	margin: 20px auto;
+	width: 100%
+}
+
+.progress-wrap > div {
+	float: center;
+	overflow: hidden;
+	padding: 0 0 1em;
+	height: 20px;
+	margin: 0 auto;
+	width: 60%;
+	text-align: center;
+}
+
+.progress-wrap > div h2 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 0;
+	padding: 4em 0 5em;
+	font-size: 0.85em;
+	color: #c44d48;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* -------------------------------- */
+/* dotstyle */
+/* -------------------------------- */
+.dotstyle ul {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	cursor: default;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.dotstyle li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0 16px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.dotstyle li a {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border-radius: 50%;
+	background-color: #cccccc;
+	background-color: rgba(0, 0, 0, 0.3);
+	text-indent: -999em; /* make the text accessible to screen readers */
+	cursor: pointer;
+	position: absolute;
+}
+
+.dotstyle li a:focus {
+	outline: none;
+}
+
+.dotstyle li a.complete{
+	background-color: #ff3333;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ------------------------------------------------------------ */
+/* Give_up Section */
+/* ------------------------------------------------------------ */
+.give_up, .give_it_another_shot {
+	margin-bottom: 50px;
+}
+.give_up p, .give_it_another_shot {
+	font-family: 'Raleway', sans-serif;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* --------------------------------------------------------------------------------------------------------------- */
+/* Result Screen
+/* --------------------------------------------------------------------------------------------------------------- */
+/* threshold_wrapper Section */
+/* ------------------------------------------------------------ */
+.threshold_wrapper {
+	margin: 40px auto;
+	width: 80%;
+}
+.threshold_wrapper p {
+	font-family: 'Raleway', sans-serif;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* score_wrapper Section */
+/* ------------------------------------------------------------ */
+.score_wrapper {
+	margin: 40px auto;
+	width: 80%;
+}
+.score_wrapper p {
+	font-family: 'Raleway', sans-serif;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Overall_Result_wrapper Section */
+/* ------------------------------------------------------------ */
+.Overall_Result_wrapper {
+		margin: 40px auto;
+	width: 80%;
+}
+.Overall_Result_wrapper p {
+	font-family: 'Raleway', sans-serif;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* -------------------------------- */
+/* verses */
+/* -------------------------------- */
+.verses {
+	margin: 10px auto;
+	font-weight: 900;
+	line-height: 1.8;
+	width: 5%;
+	color: #ff3333;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* -------------------------------- */
+/* dotstyle */
+/* -------------------------------- */
+.bar-main-container {
+  margin: 20px auto;
+  width: 300px;
+  height: 50px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #FFF;
+}
+
+.wrap { padding: 8px; }
+
+.bar-percentage {
+  float: left;
+  background: rgba(0,0,0,0.13);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 9px 0px;
+  width: 18%;
+  height: 16px;
+}
+
+.bar-container {
+  float: right;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 10px;
+  background: rgba(0,0,0,0.13);
+  width: 78%;
+  margin: 12px 0px;
+  overflow: hidden;
+}
+
+.bar {
+  float: left;
+  background: #fff;
+  height: 100%;
+  -webkit-border-radius: 10px 0px 0px 10px;
+  -moz-border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=70);
+  -moz-opacity: .7;
+  -khtml-opacity: .7;
+  opacity: .7;
+}
+
+/* COLORS */
+.clear{ background: transparant; color: #000}
+.clear .bar {
+	background: #000;
+}
+
+.clear .bar-percentage {
+	background: rgba(0,0,0,0);
+	color: #000;
+}
+.azure   { background: #38B1CC; }
+.emerald { background: #2CB299; }
+.violet  { background: #8E5D9F; }
+.yellow  { background: #EFC32F; }
+.red     { background: #E44C41; }
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* --------------------------------------------------------------------------------------------------------------- */
+/* About Me section
+/* --------------------------------------------------------------------------------------------------------------- */
+.about_me {
+	padding: 40px auto;
+	
+}
+
+.about_me h2{
+	line-height: 58px;
+	margin: 80px 0 10px;
+}
+.my_description {
+	width: 60%;
+	float: left;
+}
+
+.my_face {
+	margin: 100px 20px 10px;
+	width: 35%;
+	float: right;
+}
+
+.the_photo {
+	background: url(../images/Rahul.jpg) no-repeat;
+	border: 5px solid #ffffff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+    -o-border-radius: 5px;
+	border-radius: 5px;
+    width:270px; height:292px;
+	-webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* =Footer
+-------------------------------------------------------------- */
+Footer {
+  width: 100%;
+  height: 30%;
+  overflow: hidden;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  color: #ffffff;
+  background-color: #0683c9;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s; }
+  
+.contact_wrap{
+	height:70%;
+	/*background: red; */
+}
+  
+.left_column {
+	padding: 40px 20px;
+	text-align: right;
+	width: 80%;
+	float: left;
+}
+
+.left_column H1 {
+	font-size: 58px;
+}
+
+.right_column {
+	padding: 40px 20px;
+	width: 20%;
+	float: right;
+}
+
+.reference_bar {
+	height:30%;
+	/* background-color: #F0F3F7; */ 
+}
+
+/* =Extras
+-------------------------------------------------------------- */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0; }
+
+/* =Media Queries
+-------------------------------------------------------------- */
+@media all and (max-width: 660px) {
+  /* =Header
+  -------------------------------------------------------------- */
+  header h1#logo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    height: 100px;
+    line-height: 120px;
+	font-size: 40px;
+    text-align: center; }
+  header nav {
+    display: block;
+    float: none;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto; }
+    header nav a {
+      line-height: 50px;
+      margin: 0 10px; }
+  header.smaller {
+    height: 75px; }
+    header.smaller h1#logo {
+      height: 40px;
+      line-height: 40px;
+      font-size: 30px; }
+    header.smaller nav {
+      height: 35px; }
+      header.smaller nav a {
+        line-height: 35px; } }
+@media all and (max-width: 600px) {
+  .container {
+    width: 100%; }
+	
+}
