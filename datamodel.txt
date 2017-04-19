@@ -1,0 +1,50 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Apr 19, 2017 at 07:38 PM
+-- Server version: 5.1.57
+-- PHP Version: 5.2.17
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `login_checkin_test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `device_status_index`
+--
+
+DROP TABLE IF EXISTS `device_status_index`;
+CREATE TABLE IF NOT EXISTS `device_status_index` (
+  `display_alias` varchar(50) DEFAULT NULL,
+  `reg_code` varchar(50) NOT NULL,
+  `last_ping_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `display_status` varchar(100) NOT NULL DEFAULT 'OFFLINE'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Table lists the last ping times of connected devices.';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `first_name` varchar(20) NOT NULL,
+  `last_name` varchar(20) NOT NULL,
+  `user_id` varchar(20) NOT NULL COMMENT 'User_ID used for login',
+  `email_id` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Table for maintaining Users of the CMS system';
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` VALUES('First', 'user', 'user1', 'user1@gmail.com', '123456');
+INSERT INTO `users` VALUES('Second', 'user', 'user2', 'user2@gmail.com', '123456');
